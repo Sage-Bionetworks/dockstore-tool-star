@@ -22,6 +22,12 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
+    - name: Setup Python
+      uses: actions/setup-python@v1.2.0
+
+    - name: Install CWL test
+      run: pip install cwl-runner cwltests
+
     # Runs tests
     - name: Test
-      uses: skx/github-action-tester@master
+      run: cwltest --test tests/test-descriptions.yml --tool cwl-runner
