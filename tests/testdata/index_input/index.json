@@ -1,0 +1,14 @@
+{
+  "genemodel_gtf":
+      {
+          "class": "File",
+          "path": "./small.gtf"
+      },
+  "genome_fastas":
+      {
+          "class": "File",
+          "path": "./small.fa"
+      },
+  "nthreads": 1
+}
+
