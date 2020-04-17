@@ -11,7 +11,7 @@
         {
             "basename": "Log.out",
             "class": "File",
-            "size": 15587
+            "size": 15712
         },
         {
             "basename": "SA",
@@ -21,9 +21,9 @@
         },
         {
             "basename": "SAindex",
-            "checksum": "sha1$d52355ebe43d90d4cb55980603da46d6fe4e6025",
+            "checksum": "sha1$751d8b34c575a5750133e4fc7ca0ca66a1ab3719",
             "class": "File",
-            "size": 1565873619
+            "size": 411
         },
         {
             "basename": "chrLength.txt",
@@ -70,7 +70,7 @@
         {
             "basename": "genomeParameters.txt",
             "class": "File",
-            "size": 714
+            "size": 739
         },
         {
             "basename": "sjdbInfo.txt",

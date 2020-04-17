@@ -9,6 +9,7 @@
           "class": "File",
           "path": "./small.fa"
       },
-  "nthreads": 1
+  "nthreads": 1,
+  "salength" : 3
 }
 
