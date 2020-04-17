@@ -100,3 +100,30 @@
   tool: ../cwl/star_index.cwl
   doc: Test that star indexes the genome
   short_name: index
+
+- job: ./testdata/alignment_input/align-pe.json
+  output:
+    "aligned_reads_sam": {
+        "basename": "STARAligned.sortedByCoord.out.bam",
+        "class": "File"
+    }
+    "logs": {
+        "basename": "STARLog.final.out",
+        "class": "File",
+        "size": 1814
+    }
+    "reads_per_gene": {
+        "basename": "STARReadsPerGene.out.tab",
+        "checksum": "sha1$b163aaf4fd79ecfc38ef1b345fc3f9fd3bf9346e",
+        "class": "File",
+        "size": 182
+    }
+    "splice_junctions": {
+        "basename": "STARSJ.out.tab",
+        "checksum": "sha1$c23b2adc3b4520cf70108b5cc94f2cd42cae676d",
+        "class": "File",
+        "size": 70
+    }
+  tool: ../cwl/star_align.cwl
+  doc: Test that paired end reads align to the reference genome
+  short_name: align
