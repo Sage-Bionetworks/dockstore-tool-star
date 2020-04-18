@@ -1,129 +1,91 @@
 - job: ./testdata/index_input/index.json
   output:
     genome_dir:
-          [
-        {
-            "basename": "Genome",
-            "checksum": "sha1$ede33a0e4466787ea5784c02cb588b6e44dacca1",
-            "class": "File",
-            "size": 6033734
-        },
-        {
-            "basename": "Log.out",
-            "class": "File",
-            "size": 15712
-        },
-        {
-            "basename": "SA",
-            "checksum": "sha1$b1a831161e03e8f96bfa82afb884126dca24c9b8",
-            "class": "File",
-            "size": 5728308
-        },
-        {
-            "basename": "SAindex",
-            "checksum": "sha1$751d8b34c575a5750133e4fc7ca0ca66a1ab3719",
-            "class": "File",
-            "size": 411
-        },
-        {
-            "basename": "chrLength.txt",
-            "checksum": "sha1$c4e707ee8e2c09ec7cfeda74b15a394091d48a41",
-            "class": "File",
-            "size": 8
-        },
-        {
-            "basename": "chrName.txt",
-            "checksum": "sha1$80fc235a4149d180b29760805734c52c43080ba1",
-            "class": "File",
-            "size": 6
-        },
-        {
-            "basename": "chrNameLength.txt",
-            "checksum": "sha1$93edfe514d3b61181691ca0866ed041d9ec10ad9",
-            "class": "File",
-            "size": 14
-        },
-        {
-            "basename": "chrStart.txt",
-            "checksum": "sha1$4c8a7d1f1dcb0ba1bae5bd7fc835faac629f5f33",
-            "class": "File",
-            "size": 10
-        },
-        {
-            "basename": "exonGeTrInfo.tab",
-            "checksum": "sha1$afb100d624f6286ae759c2c8eeb308382de8fef8",
-            "class": "File",
-            "size": 1235
-        },
-        {
-            "basename": "exonInfo.tab",
-            "checksum": "sha1$2b949fea748a92b4f04c64eeb29d1a824045867d",
-            "class": "File",
-            "size": 755
-        },
-        {
-            "basename": "geneInfo.tab",
-            "checksum": "sha1$990ca111d3934f74de3fc546b836c3e733ee67ce",
-            "class": "File",
-            "size": 74
-        },
-        {
-            "basename": "genomeParameters.txt",
-            "class": "File",
-            "size": 739
-        },
-        {
-            "basename": "sjdbInfo.txt",
-            "checksum": "sha1$ae94244e49e737fbd069bea19bf9d5645db64753",
-            "class": "File",
-            "size": 535
-        },
-        {
-            "basename": "sjdbList.fromGTF.out.tab",
-            "checksum": "sha1$fc32b2123170fc72a89d2ad710fe88dae398069d",
-            "class": "File",
-            "size": 528
-        },
-        {
-            "basename": "sjdbList.out.tab",
-            "checksum": "sha1$fc32b2123170fc72a89d2ad710fe88dae398069d",
-            "class": "File",
-            "size": 528
-        },
-        {
-            "basename": "transcriptInfo.tab",
-            "checksum": "sha1$5ec6231f0a06080aed919794f86a929cfccd4c0b",
-            "class": "File",
-            "size": 491
-        }
-    ]
+    - basename: Genome
+      checksum: sha1$ede33a0e4466787ea5784c02cb588b6e44dacca1
+      class: File
+      size: 6033734
+    - basename: Log.out
+      class: File
+      size: 15712
+    - basename: SA
+      checksum: sha1$b1a831161e03e8f96bfa82afb884126dca24c9b8
+      class: File
+      size: 5728308
+    - basename: SAindex
+      checksum: sha1$751d8b34c575a5750133e4fc7ca0ca66a1ab3719
+      class: File
+      size: 411
+    - basename: chrLength.txt
+      checksum: sha1$c4e707ee8e2c09ec7cfeda74b15a394091d48a41
+      class: File
+      size: 8
+    - basename: chrName.txt
+      checksum: sha1$80fc235a4149d180b29760805734c52c43080ba1
+      class: File
+      size: 6
+    - basename: chrNameLength.txt
+      checksum: sha1$93edfe514d3b61181691ca0866ed041d9ec10ad9
+      class: File
+      size: 14
+    - basename: chrStart.txt
+      checksum: sha1$4c8a7d1f1dcb0ba1bae5bd7fc835faac629f5f33
+      class: File
+      size: 10
+    - basename: exonGeTrInfo.tab
+      checksum: sha1$afb100d624f6286ae759c2c8eeb308382de8fef8
+      class: File
+      size: 1235
+    - basename: exonInfo.tab
+      checksum: sha1$2b949fea748a92b4f04c64eeb29d1a824045867d
+      class: File
+      size: 755
+    - basename: geneInfo.tab
+      checksum: sha1$990ca111d3934f74de3fc546b836c3e733ee67ce
+      class: File
+      size: 74
+    - basename: genomeParameters.txt
+      class: File
+      size: 739
+    - basename: sjdbInfo.txt
+      checksum: sha1$ae94244e49e737fbd069bea19bf9d5645db64753
+      class: File
+      size: 535
+    - basename: sjdbList.fromGTF.out.tab
+      checksum: sha1$fc32b2123170fc72a89d2ad710fe88dae398069d
+      class: File
+      size: 528
+    - basename: sjdbList.out.tab
+      checksum: sha1$fc32b2123170fc72a89d2ad710fe88dae398069d
+      class: File
+      size: 528
+    - basename: transcriptInfo.tab
+      checksum: sha1$5ec6231f0a06080aed919794f86a929cfccd4c0b
+      class: File
+      size: 491
   tool: ../cwl/star_index.cwl
   doc: Test that star indexes the genome
   short_name: index
 
 - job: ./testdata/alignment_input/align-pe.json
   output:
-    "aligned_reads_sam": {
-        "basename": "STARAligned.sortedByCoord.out.bam",
-        "class": "File"
-    }
-    "logs": {
-        "basename": "STARLog.final.out",
-        "class": "File",
-        "size": 1814
-    }
-    "reads_per_gene": {
-        "basename": "STARReadsPerGene.out.tab",
-        "checksum": "sha1$b163aaf4fd79ecfc38ef1b345fc3f9fd3bf9346e",
-        "class": "File",
-        "size": 182
-    }
-    "splice_junctions": {
-        "basename": "STARSJ.out.tab",
-        "checksum": "sha1$c23b2adc3b4520cf70108b5cc94f2cd42cae676d",
-        "class": "File",
-        "size": 70
-    }
+    aligned_reads_sam: 
+      basename: STARAligned.sortedByCoord.out.bam
+      class: File
+    logs: 
+      basename: STARLog.final.out
+      class: File
+      size: 1814
+    reads_per_gene: 
+      basename: STARReadsPerGene.out.tab
+      checksum: sha1$b163aaf4fd79ecfc38ef1b345fc3f9fd3bf9346e
+      class: File
+      size: 182
+    splice_junctions: 
+      basename: STARSJ.out.tab
+      checksum: sha1$c23b2adc3b4520cf70108b5cc94f2cd42cae676d
+      class: File
+      size: 70
   tool: ../cwl/star_align.cwl
   doc: Test that paired end reads align to the reference genome
   short_name: align
