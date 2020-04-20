@@ -66,7 +66,6 @@
   tool: ../cwl/star_index.cwl
   doc: Test that star indexes the genome
   short_name: index
-
 - job: ./testdata/alignment_input/align-pe.json
   output:
     aligned_reads_sam: 
@@ -88,4 +87,26 @@
       size: 70
   tool: ../cwl/star_align.cwl
   doc: Test that paired end reads align to the reference genome
-  short_name: align
+  short_name: paired-end alignment
+- job: ./testdata/alignment_input/align-se.json
+  output:
+    aligned_reads_sam:
+      basename: STARAligned.sortedByCoord.out.bam
+      class: File
+    logs:
+      basename: STARLog.final.out
+      class: File
+      size: 1811
+    reads_per_gene:
+      basename: STARReadsPerGene.out.tab
+      checksum: sha1$e3b530b363b812ed783979983f25dec921cd0c8f
+      class: File
+      size: 182
+    splice_junctions:
+      basename: STARSJ.out.tab
+      checksum: sha1$adf28de32c6bbd525afaf91c379a3ff49bcd3e04
+      class: File
+      size: 140
+  tool: ../cwl/star_align-se.cwl
+  doc: Test that single end reads align to the reference genome
+  short_name: single-end alignment
