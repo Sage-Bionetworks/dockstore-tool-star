@@ -89,6 +89,15 @@ inputs:
     type: string?
     default: .
 
+  - id: salength
+    type: int
+    default: 14
+    doc: |
+      length of the pre-indexing string used by STAR. Lower this value if you are
+      using a very small referene genome or you need to generate smaller outputs
+    inputBinding:
+      prefix: --genomeSAindexNbases
+
   - id: memory_limit
     label: memory limit for STAR
     doc: |

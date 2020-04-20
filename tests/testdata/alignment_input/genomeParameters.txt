@@ -1,0 +1,14 @@
+### STAR   --runMode genomeGenerate   --runThreadN 1   --genomeDir .   --genomeFastaFiles /var/lib/cwl/stg8c7fc13a-ff80-46a2-8908-3a44d147437b/small.fa      --genomeSAindexNbases 2   --limitGenomeGenerateRAM 16104832   --sjdbGTFfile /var/lib/cwl/stgb9f37ad0-111c-4ccc-ade1-ac39d72f88da/small.gtf   --sjdbOverhang 100
+versionGenome	20201
+genomeFastaFiles	/var/lib/cwl/stg8c7fc13a-ff80-46a2-8908-3a44d147437b/small.fa 
+genomeSAindexNbases	2
+genomeChrBinNbits	18
+genomeSAsparseD	1
+sjdbOverhang	100
+sjdbFileChrStartEnd	- 
+sjdbGTFfile	/var/lib/cwl/stgb9f37ad0-111c-4ccc-ade1-ac39d72f88da/small.gtf
+sjdbGTFchrPrefix	-
+sjdbGTFfeatureExon	exon
+sjdbGTFtagExonParentTranscript	transcript_id
+sjdbGTFtagExonParentGene	gene_id
+sjdbInsertSave	Basic
