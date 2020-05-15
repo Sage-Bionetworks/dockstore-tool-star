@@ -7,7 +7,6 @@
       size: 6033734
     - basename: Log.out
       class: File
-      size: 15712
     - basename: SA
       checksum: sha1$b1a831161e03e8f96bfa82afb884126dca24c9b8
       class: File
@@ -74,7 +73,6 @@
     logs: 
       basename: STARLog.final.out
       class: File
-      size: 1814
     reads_per_gene: 
       basename: STARReadsPerGene.out.tab
       checksum: sha1$b163aaf4fd79ecfc38ef1b345fc3f9fd3bf9346e
@@ -96,7 +94,6 @@
     logs:
       basename: STARLog.final.out
       class: File
-      size: 1811
     reads_per_gene:
       basename: STARReadsPerGene.out.tab
       checksum: sha1$e3b530b363b812ed783979983f25dec921cd0c8f
