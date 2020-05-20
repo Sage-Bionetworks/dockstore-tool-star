@@ -19,7 +19,7 @@ dct:creator:
 hints:
 
   - class: DockerRequirement
-    dockerPull: 'wpoehlm/ngstools:star'
+    dockerPull: 'sagebionetworks/dockstore-tool-star'
 
 requirements:
 
