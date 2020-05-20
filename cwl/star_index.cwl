@@ -19,7 +19,7 @@ dct:creator:
 hints:
 
   - class: DockerRequirement
-    dockerPull: 'sagebionetworks/dockstore-tool-star'
+    dockerPull: 'sagebionetworks/dockstore-tool-star:0.0.0'
 
 requirements:
 
