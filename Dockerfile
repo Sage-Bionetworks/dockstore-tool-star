@@ -9,9 +9,6 @@ LABEL about.home="https://github.com/alexdobin/STAR"
 LABEL about.license="SPDX:MIT"
 LABEL about.tags="RNASeq"
 
-COPY VERSION /
-COPY SOFTWARE_VERSION /
-
 # Avoid interactive prompts when installing R
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -26,7 +23,7 @@ RUN apt-get update \
     wget 
 
 # Install STAR aligner
-RUN export SOFTWARE_VERSION=$(cat /SOFTWARE_VERSION) \
+RUN export SOFTWARE_VERSION='2.5.1b' \
  && wget https://github.com/alexdobin/STAR/archive/${SOFTWARE_VERSION}.tar.gz \
  && tar -xf ${SOFTWARE_VERSION}.tar.gz \
  && rm ${SOFTWARE_VERSION}.tar.gz \
