@@ -26,8 +26,6 @@ requirements:
 baseCommand: ['STAR', '--runMode', 'alignReads']
 
 arguments:
-#  - prefix: --genomeDir
-#    valueFrom: "$(runtime.outdir)/$(inputs.genstr)"
   - prefix: --outFileNamePrefix
     valueFrom: "$(runtime.outdir)/$(inputs.output_dir_name)"
 
@@ -38,6 +36,7 @@ inputs:
     inputBinding:
       position: 1
       prefix: --readFilesIn
+
   - id: genstr
     label: Reference genome directory
     doc: |
@@ -46,8 +45,10 @@ inputs:
     default: .
     inputBinding:
       prefix: --genomeDir
+
   - id: genome_dir
     type: File[]
+
   - id: nthreads
     label: Number of threads
     doc: |
@@ -56,12 +57,14 @@ inputs:
     type: int
     inputBinding:
       prefix: --runThreadN
+
   - id: output_dir_name
     label: Output directory name
     doc: |
       Name of the directory to write output files in
     type: string
     default: "STAR"
+
   - id: output_sam_type
     label: Output reads SAM/BAM
     doc: |
@@ -73,6 +76,7 @@ inputs:
     default: ["BAM", "SortedByCoordinate"]
     inputBinding:
       prefix: --outSAMtype
+
   - id: output_sam_unmapped
     label: Unmapped reads action
     doc: |
@@ -110,16 +114,12 @@ inputs:
       prefix: --twopassMode
 
 outputs:
+
   - id: aligned_reads_sam
     label: Aligned reads SAM
     type: File
     outputBinding:
       glob: "*bam"
-
-  # - id: transcriptome_aligned_reads_bam
-  #   type: File
-  #   outputBinding:
-  #     glob: "*Aligned.toTranscriptome.out.bam"
 
   - id: reads_per_gene
     label: Reads per gene
