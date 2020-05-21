@@ -1,70 +1,60 @@
-#!/usr/bin/env cwl-runner
-
+arguments:
+- prefix: --out_dir
+  valueFrom: $(runtime.outdir)
+baseCommand:
+- combine_counts_study.R
 class: CommandLineTool
 cwlVersion: v1.0
-id: combine-counts
-label: Combine read counts across samples
+doc: 'Combine individual sample count files into a gene x sample matrix file.
 
-doc: |
-  Combine individual sample count files into a gene x sample matrix file.
-
-baseCommand: ['combine_counts_study.R']
-
-requirements:
-  - class: InlineJavascriptRequirement
-
+  '
 hints:
-  - class: DockerRequirement
-    dockerPull: 'sagebionetworks/dockstore-tool-star:0.0.0'
-
-arguments:
-
-  - prefix: --out_dir
-    valueFrom: $(runtime.outdir)
-
+- class: DockerRequirement
+  dockerPull: sagebionetworks/dockstore-tool-star:0.0.1-20f512b
+id: combine-counts
 inputs:
+- id: read_counts
+  inputBinding:
+    position: 0
+  label: Read count files to combine
+  type: File[]
+- default: gene
+  doc: 'Prefix for output file (i.e., <prefix>_all_counts_matrix.txt).
 
-  - id: read_counts
-    label: Read count files to combine
-    type: File[]
-    inputBinding:
-      position: 0
+    '
+  id: output_prefix
+  inputBinding:
+    position: 1
+    prefix: --out_prefix
+  label: Output counts file prefix
+  type: string
+- default: ReadsPerGene.out.tab
+  doc: 'Suffix to strip from sample filename [default %(default)s].
 
-  - id: output_prefix
-    label: Output counts file prefix
-    doc: |
-      Prefix for output file (i.e., <prefix>_all_counts_matrix.txt).
-    type: string
-    default: gene
-    inputBinding:
-      position: 1
-      prefix: --out_prefix
+    '
+  id: sample_suffix
+  inputBinding:
+    position: 2
+    prefix: --sample_suffix
+  label: Suffix to remove from filename
+  type: string
+- default: 2
+  doc: '1-based index of counts column to select [default %(default)s].
 
-  - id: sample_suffix
-    label: Suffix to remove from filename
-    doc: |
-      Suffix to strip from sample filename [default %(default)s].
-    type: string
-    default: "ReadsPerGene.out.tab"
-    inputBinding:
-      position: 2
-      prefix: --sample_suffix
-
-  - id: column_number
-    label: Counts column number
-    doc: |
-      1-based index of counts column to select [default %(default)s].
-    type: int
-    default: 2
-    inputBinding:
-      position: 4
-      prefix: --col_num
-
+    '
+  id: column_number
+  inputBinding:
+    position: 4
+    prefix: --col_num
+  label: Counts column number
+  type: int
+label: Combine read counts across samples
 outputs:
-
-  - id: combined_counts
-    label: Combined counts matrix
-    doc: Combined counts matrix saved as tab-delimited text file.
-    type: File
-    outputBinding:
-      glob: "*_all_counts_matrix.txt"
+- doc: Combined counts matrix saved as tab-delimited text file.
+  id: combined_counts
+  label: Combined counts matrix
+  outputBinding:
+    glob: '*_all_counts_matrix.txt'
+  type: File
+requirements:
+- class: InlineJavascriptRequirement
