@@ -21,7 +21,7 @@ doc: 'STAR: Spliced Transcripts Alignment to a Reference.
   '
 hints:
 - class: DockerRequirement
-  dockerPull: sagebionetworks/dockstore-tool-star:0.0.1-20f512b
+  dockerPull: sagebionetworks/dockstore-tool-star:0.0.1
 inputs:
 - id: mate_1_fastq
   inputBinding:

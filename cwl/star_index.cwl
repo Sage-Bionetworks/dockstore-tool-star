@@ -24,7 +24,7 @@ doc: 'Generate genome indexes for STAR.
   '
 hints:
 - class: DockerRequirement
-  dockerPull: sagebionetworks/dockstore-tool-star:0.0.1-20f512b
+  dockerPull: sagebionetworks/dockstore-tool-star:0.0.1
 inputs:
 - doc: 'defines the number of threads to be used for genome generation, it has
 
