@@ -9,21 +9,19 @@ LABEL about.home="https://github.com/alexdobin/STAR"
 LABEL about.license="SPDX:MIT"
 LABEL about.tags="RNASeq"
 
-# Avoid interactive prompts when installing R
-ARG DEBIAN_FRONTEND=noninteractive
+COPY VERSION /
+COPY SOFTWARE_VERSION /
 
 # Install dependencies
 RUN apt-get update \
- && apt-get install -y --no-install-recommends \
+ && apt-get install -y \
     binutils \
     build-essential \
     libz-dev \
-    python \
-    r-base \
     wget 
 
 # Install STAR aligner
-RUN export SOFTWARE_VERSION='2.5.1b' \
+RUN export SOFTWARE_VERSION=$(cat /SOFTWARE_VERSION) \
  && wget https://github.com/alexdobin/STAR/archive/${SOFTWARE_VERSION}.tar.gz \
  && tar -xf ${SOFTWARE_VERSION}.tar.gz \
  && rm ${SOFTWARE_VERSION}.tar.gz \
@@ -33,11 +31,4 @@ RUN export SOFTWARE_VERSION='2.5.1b' \
  && cd .. \
  && rm -rf STAR-${SOFTWARE_VERSION}
 
-# Install R packages
-RUN R -e "install.packages(c('argparse','readr','stringr','tidyr','purrr','dplyr'),dependencies=TRUE,repos='http://cran.rstudio.com/')"
-
-# Setup combine counts script
-COPY bin/* /usr/local/bin/
-RUN chmod a+x /usr/local/bin/combine_counts_study.R
 CMD ["/bin/bash"]
-
