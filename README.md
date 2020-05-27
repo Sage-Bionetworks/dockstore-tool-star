@@ -7,7 +7,7 @@ This repository contains a dockerfile and the following CWL tools:
 - [star_index.cwl](cwl/star_index.cwl): indexes the reference genome using the `STAR --runMode genomeGenerate` command
 - [star_align.cwl](cwl/star_align.cwl): aligns paired-end reads to the indexed reference genome using the `STAR --runMode alignReads` command  
 - [star_align-se.cwl](cwl/star_align-se.cwl): aligns single-end reads to the indexed reference genome using the `STAR --runMode alignReads` command
-- [combine_counts_study.cwl](cwl/combine_counts_study.cwl): combines gene counts produced by multiple samples into a single table
+- [combine_counts_study.cwl](cwl/combine_counts_study.cwl): combines gene counts produced by multiple samples into a single table. The script can be found [here](bin/combine_counts_study.R)
 
 Documentation for the STAR Aligner functions used can be found [here](https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)
 
