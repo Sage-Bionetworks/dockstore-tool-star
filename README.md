@@ -13,18 +13,18 @@ Documentation for the STAR Aligner functions used can be found [here](https://gi
 
 ## Dockerfile
 
-A Dockerfile should exist in the top level directory of this repository.
+A Dockerfile exists in the top level directory of this repository. Builds are automatically triggered on pushes in which the most recent commit message does not contain the `[skip-ci]` string
 
 ## CWL
 
-A directory [cwl](cwl) should contain tool definitions in the CWL language.
+The [cwl](cwl) folder contains tool definitions in the Common Workflow language.
 
 ## Tests
 
 [`cwltest`](https://github.com/common-workflow-language/cwltest) is used for
-testing tools. Add test descriptions to `tests/test-descriptions.yaml`. Each test
-added requires a file describing the job inputs that should be added to the
-[tests](tests) directory.
+testing tools. Test descriptions are present in `tests/test-descriptions.yaml`. Tests are automatically performed on pushes in which the most recent commit message does not contain the `[skip-ci]` string
+
+# Contributing 
 
 ## Continuous Deployment and Versioning
 
