@@ -2,7 +2,7 @@
 Versioned Docker image and CWL tools for the STAR Read Aligner
 
 # Description
-This repository contains a dockerfile and the following CWL tools:
+This repository contains the following CWL tools:
 
 - [star_index.cwl](cwl/star_index.cwl): indexes the reference genome using the `STAR --runMode genomeGenerate` command
 - [star_align.cwl](cwl/star_align.cwl): aligns paired-end reads to the indexed reference genome using the `STAR --runMode alignReads` command  
