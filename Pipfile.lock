@@ -294,13 +294,6 @@
             "markers": "platform_python_implementation == 'CPython' and python_version < '3.8'",
             "version": "==0.2.0"
         },
-        "schema-salad": {
-            "hashes": [
-                "sha256:5fd7b959d5f23ec8554aafc360f0584896f9f0d6f0db0d38c884676c8cc0a6de",
-                "sha256:f86cb0ddf815ee0ec010cf816d7643730a8e74b9709a5cd71f02d771ef8700c8"
-            ],
-            "version": "==5.0.20200416112825"
-        },
         "semver": {
             "hashes": [
                 "sha256:21eb9deafc627dfd122e294f96acd0deadf1b5b7758ab3bbdf3698155dca4705",
