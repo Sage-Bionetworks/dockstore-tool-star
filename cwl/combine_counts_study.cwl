@@ -1,15 +1,5 @@
 $namespaces:
   s: https://schema.org/
-s:author:
-  - class: s:Person
-    s:identifier: http://orcid.org/0000-0003-3777-5945
-    s:email: mailto:inutano@gmail.com
-    s:name: Tazro Ohta
-s:contributor:
-  - class: s:Person
-    s:identifier: https://orcid.org/0000-0002-3659-9663
-    s:email: mailto:william.poehlman@sagebase.org
-    s:name: William Poehlman
 arguments:
 - prefix: --out_dir
   valueFrom: $(runtime.outdir)
@@ -22,7 +12,7 @@ doc: 'Combine individual sample count files into a gene x sample matrix file.
   '
 hints:
 - class: DockerRequirement
-  dockerPull: sagebionetworks/dockstore-tool-star:0.0.3
+  dockerPull: sagebionetworks/dockstore-tool-star:0.0.4
 id: combine-counts
 inputs:
 - id: read_counts
@@ -70,3 +60,13 @@ outputs:
   type: File
 requirements:
 - class: InlineJavascriptRequirement
+s:author:
+- class: s:Person
+  s:email: mailto:inutano@gmail.com
+  s:identifier: http://orcid.org/0000-0003-3777-5945
+  s:name: Tazro Ohta
+s:contributor:
+- class: s:Person
+  s:email: mailto:william.poehlman@sagebase.org
+  s:identifier: https://orcid.org/0000-0002-3659-9663
+  s:name: William Poehlman

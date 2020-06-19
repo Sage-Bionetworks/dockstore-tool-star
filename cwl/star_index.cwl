@@ -1,15 +1,5 @@
 $namespaces:
   s: https://schema.org/
-s:author:
-  - class: s:Person
-    s:identifier: http://orcid.org/0000-0003-3777-5945
-    s:email: mailto:inutano@gmail.com
-    s:name: Tazro Ohta
-s:contributor:
-  - class: s:Person
-    s:identifier: https://orcid.org/0000-0002-3659-9663
-    s:email: mailto:william.poehlman@sagebase.org
-    s:name: William Poehlman
 arguments:
 - prefix: --genomeDir
   valueFrom: $(inputs.genstr)
@@ -29,7 +19,7 @@ doc: 'Generate genome indexes for STAR.
   '
 hints:
 - class: DockerRequirement
-  dockerPull: sagebionetworks/dockstore-tool-star:0.0.3
+  dockerPull: sagebionetworks/dockstore-tool-star:0.0.4
 inputs:
 - doc: 'defines the number of threads to be used for genome generation, it has
 
@@ -134,3 +124,13 @@ outputs:
 requirements:
 - class: InlineJavascriptRequirement
 - class: StepInputExpressionRequirement
+s:author:
+- class: s:Person
+  s:email: mailto:inutano@gmail.com
+  s:identifier: http://orcid.org/0000-0003-3777-5945
+  s:name: Tazro Ohta
+s:contributor:
+- class: s:Person
+  s:email: mailto:william.poehlman@sagebase.org
+  s:identifier: https://orcid.org/0000-0002-3659-9663
+  s:name: William Poehlman
