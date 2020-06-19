@@ -1,6 +1,15 @@
 $namespaces:
-  dct: http://purl.org/dc/terms/
-  foaf: http://xmlns.com/foaf/0.1/
+  s: https://schema.org/
+s:author:
+  - class: s:Person
+    s:identifier: http://orcid.org/0000-0003-3777-5945
+    s:email: mailto:inutano@gmail.com
+    s:name: Tazro Ohta
+s:contributor:
+  - class: s:Person
+    s:identifier: https://orcid.org/0000-0002-3659-9663
+    s:email: mailto:william.poehlman@sagebase.org
+    s:name: William Poehlman
 arguments:
 - prefix: --genomeDir
   valueFrom: $(inputs.genstr)
@@ -10,10 +19,6 @@ baseCommand:
 - genomeGenerate
 class: CommandLineTool
 cwlVersion: v1.0
-dct:creator:
-  '@id': http://orcid.org/0000-0003-3777-5945
-  foaf:mbox: mailto:inutano@gmail.com
-  foaf:name: Tazro Ohta
 doc: 'Generate genome indexes for STAR.
 
 
