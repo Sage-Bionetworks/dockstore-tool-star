@@ -1,3 +1,15 @@
+$namespaces:
+  s: https://schema.org/
+s:author:
+  - class: s:Person
+    s:identifier: http://orcid.org/0000-0003-3777-5945
+    s:email: mailto:inutano@gmail.com
+    s:name: Tazro Ohta
+s:contributor:
+  - class: s:Person
+    s:identifier: https://orcid.org/0000-0002-3659-9663
+    s:email: mailto:william.poehlman@sagebase.org
+    s:name: William Poehlman
 arguments:
 - prefix: --out_dir
   valueFrom: $(runtime.outdir)
