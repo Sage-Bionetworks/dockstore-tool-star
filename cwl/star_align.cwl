@@ -27,6 +27,47 @@ inputs:
   inputBinding:
     position: 2
   type: File?
+- id: sjdb
+  inputBinding:
+    prefix: --sjdbGTFfile
+  type: File?
+- id: alignEndsType
+  inputBinding:
+    prefix: --alignEndsType
+  type: string?
+  default: "Local"
+- id: outFilterMismatchNmax
+  inputBinding:
+    prefix: --outFilterMismatchNmax
+  type: int?
+- id: outFilterMultimapScoreRange
+  inputBinding:
+    prefix: --outFilterMultimapScoreRange
+  type: int?
+- id: outFilterMultimapNmax
+  inputBinding:
+    prefix: --outFilterMultimapNmax
+  type: int?
+- id: outFilterScoreMinOverLread
+  inputBinding:
+    prefix: --outFilterScoreMinOverLread
+  type: int?
+- id: outFilterMatchNminOverLread
+  inputBinding: 
+    prefix: --outFilterMatchNminOverLread
+  type: int? 
+- id: outFilterMatchNmin
+  inputBinding:
+    prefix: --outFilterMatchNmin
+  type: int?
+- id: alignSJDBoverhangMin
+  inputBinding:
+    prefix: --alignSJDBoverhangMin
+  type: int?
+- id: alignIntronMax
+  inputBinding:
+    prefix: --alignIntronMax
+  type: int?
 - default: .
   doc: 'path to the directory where genome files are stored
 
