@@ -12,7 +12,7 @@ doc: 'Combine individual sample count files into a gene x sample matrix file.
   '
 hints:
 - class: DockerRequirement
-  dockerPull: sagebionetworks/dockstore-tool-star:1.0.1-fa3a687
+  dockerPull: sagebionetworks/dockstore-tool-star:1.0.1
 id: combine-counts
 inputs:
 - id: read_counts
