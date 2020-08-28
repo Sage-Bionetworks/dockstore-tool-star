@@ -16,7 +16,7 @@ doc: 'STAR: Spliced Transcripts Alignment to a Reference.
   '
 hints:
 - class: DockerRequirement
-  dockerPull: sagebionetworks/dockstore-tool-star:1.0.0
+  dockerPull: sagebionetworks/dockstore-tool-star:1.0.1-fa3a687
 inputs:
 - id: mate_1_fastq
   inputBinding:
@@ -27,54 +27,62 @@ inputs:
   inputBinding:
     position: 2
   type: File?
-- id: sjdbGTFfile
-  doc: 'path to GTF annotation file to use for guiding alignments'
+- doc: path to GTF annotation file to use for guiding alignments
+  id: sjdbGTFfile
   inputBinding:
     prefix: --sjdbGTFfile
   type: File?
-- id: alignEndsType
-  doc: 'type of alignment to perform on read ends. Possible options include: "Local", "EndToEnd", "Extend5pOfRead1", or "Extend5pOfReads12" (https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)'
+- default: Local
+  doc: 'type of alignment to perform on read ends. Possible options include: "Local",
+    "EndToEnd", "Extend5pOfRead1", or "Extend5pOfReads12" (https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)'
+  id: alignEndsType
   inputBinding:
     prefix: --alignEndsType
   type: string?
-  default: "Local"
-- id: outFilterMismatchNmax
-  doc: 'maximum number of mismatches per pair (https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)'
+- doc: maximum number of mismatches per pair (https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)
+  id: outFilterMismatchNmax
   inputBinding:
     prefix: --outFilterMismatchNmax
   type: int?
-- id: outFilterMultimapScoreRange
-  doc: 'the score range below the maximum score for multimapping alignments (https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)'
+- doc: the score range below the maximum score for multimapping alignments (https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)
+  id: outFilterMultimapScoreRange
   inputBinding:
     prefix: --outFilterMultimapScoreRange
   type: int?
-- id: outFilterMultimapNmax
-  doc: 'max number of multiple alignments allowed for a read: if exceeded, the read is considered unmapped (https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)'
+- doc: 'max number of multiple alignments allowed for a read: if exceeded, the read
+    is considered unmapped (https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)'
+  id: outFilterMultimapNmax
   inputBinding:
     prefix: --outFilterMultimapNmax
   type: int?
-- id: outFilterScoreMinOverLread
-  doc: 'alignment will be output only if its score is higher than or equal to this value, normalized to read length (sum of mates’lengths for paired-end reads) (https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)'
+- doc: "alignment will be output only if its score is higher than or equal to this\
+    \ value, normalized to read length (sum of mates\u2019lengths for paired-end reads)\
+    \ (https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)"
+  id: outFilterScoreMinOverLread
   inputBinding:
     prefix: --outFilterScoreMinOverLread
   type: int?
-- id: outFilterMatchNminOverLread
-  doc: 'alignment will be output only if the number of matched bases is higherthan or equal to this value, normalized to the read length (sum of mates’ lengths for paired-end reads)(https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)'
-  inputBinding: 
+- doc: "alignment will be output only if the number of matched bases is higherthan\
+    \ or equal to this value, normalized to the read length (sum of mates\u2019 lengths\
+    \ for paired-end reads)(https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)"
+  id: outFilterMatchNminOverLread
+  inputBinding:
     prefix: --outFilterMatchNminOverLread
-  type: int? 
-- id: outFilterMatchNmin
-  doc: 'alignment will be output only if the number of matched bases is higherthan or equal to this value (https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)'
+  type: int?
+- doc: alignment will be output only if the number of matched bases is higherthan
+    or equal to this value (https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)
+  id: outFilterMatchNmin
   inputBinding:
     prefix: --outFilterMatchNmin
   type: int?
-- id: alignSJDBoverhangMin
-  doc: 'minimum overhang (i.e. block size) for annotated (sjdb) splicedalignments (https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)'
+- doc: minimum overhang (i.e. block size) for annotated (sjdb) splicedalignments (https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)
+  id: alignSJDBoverhangMin
   inputBinding:
     prefix: --alignSJDBoverhangMin
   type: int?
-- id: alignIntronMax
-  doc: 'maximum intron size, if 0, max intron size will be determined by(2ˆwinBinNbits)*winAnchorDistNbins (https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)'
+- doc: "maximum intron size, if 0, max intron size will be determined by(2\u02C6winBinNbits)*winAnchorDistNbins\
+    \ (https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)"
+  id: alignIntronMax
   inputBinding:
     prefix: --alignIntronMax
   type: int?
