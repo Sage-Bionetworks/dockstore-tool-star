@@ -188,6 +188,7 @@ requirements:
   InitialWorkDirRequirement:
     listing:
     - $(inputs.genome_dir)
+    - $(inputs.sjdbGTFfile)
 s:author:
 - class: s:Person
   s:email: mailto:inutano@gmail.com
